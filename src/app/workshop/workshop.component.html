@@ -1,0 +1,8 @@
+<div class="content">
+  <div class="content-left">
+    <app-theme-list (activeThemeChange)="setActiveTheme($event)"></app-theme-list>
+  </div>
+  <div class="content-right">
+    <app-theme *ngIf="activeTheme" [theme]="activeTheme"></app-theme>
+  </div>
+</div>
