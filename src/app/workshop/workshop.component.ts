@@ -7,9 +7,9 @@ import {Component} from '@angular/core';
 })
 export class WorkshopComponent {
 
-  activeTheme: number;
+  activeTheme: Theme;
 
-  setActiveTheme(id: number) {
-    this.activeTheme = id;
+  setActiveTheme(theme: Theme) {
+    this.activeTheme = theme;
   }
 }

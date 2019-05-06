@@ -1,4 +1,5 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, Output} from '@angular/core';
+import {Theme} from '../theme.model';
 
 @Component({
   selector: 'app-theme-list',
@@ -6,9 +7,9 @@ import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 })
 export class ThemeListComponent {
 
-  @Output() activeThemeChange: EventEmitter<number> = new EventEmitter();
+  @Output() activeThemeChange: EventEmitter<Theme> = new EventEmitter();
 
-  setActiveTheme(id: number) {
-    this.activeThemeChange.emit(id);
+  setActiveTheme(theme: Theme) {
+    this.activeThemeChange.emit(theme);
   }
 }

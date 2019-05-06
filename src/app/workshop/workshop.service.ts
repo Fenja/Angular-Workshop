@@ -38,9 +38,10 @@ export class WorkshopService {
     },
   ];
 
-  getTheme(id: number) {
-    return this.themes.filter(t => t.id === id)[0];
+  getThemes() {
+    return this.themes;
   }
+
 
   checkTheme(theme: Theme) {
     const foundTheme = this.themes.filter(t => t.id === theme.id)[0];

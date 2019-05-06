@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {Theme} from './theme.model';
 import {WorkshopService} from '../workshop.service';
 
@@ -6,21 +6,15 @@ import {WorkshopService} from '../workshop.service';
   selector: 'app-theme',
   templateUrl: './theme.component.html'
 })
-export class ThemeComponent implements OnInit {
+export class ThemeComponent {
 
   @Input()
-  public theme: number;
-
-  activeTheme: Theme;
+  public theme: Theme;
 
   constructor(public workshopService: WorkshopService) {}
 
-  ngOnInit() {
-    this.activeTheme = this.workshopService.getTheme(this.theme);
-  }
-
   checkTheme() {
-    this.workshopService.checkTheme(this.activeTheme);
+    this.workshopService.checkTheme(this.theme);
   }
 
 }
